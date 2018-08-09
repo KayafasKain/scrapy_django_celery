@@ -11,7 +11,7 @@ class AizelSpider(RedisSpider):
     def parse(self, response): # parsing manin page
         requests = 0
         for href in response.xpath('//li[contains(@class, "product__item")]//a/@href').extract():
-            if requests < 1:
+            if requests < 50:
                 link = 'https://aizel.ru' + href
                 yield scrapy.Request(link, callback=self.parse_category, meta={'link': link})
             else:
