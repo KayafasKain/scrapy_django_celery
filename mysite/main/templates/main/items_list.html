@@ -1,0 +1,21 @@
+{% block body %}
+    <table>
+    <tr>
+        <th>name</th> <th>description</th><th>price</th><th>currency</th>
+        <th>images</th><th>brand</th><th>sizes</th>
+    </tr>
+        {% for obj in object_list %}
+                <tr>
+                    <th>{{ obj.ware_name }}</th>
+                    <th>{{ obj.description }}</th>
+                    <th>{{ obj.price }}</th>
+                    <th>{{ obj.currency }}</th>
+                    <th>{{ obj.images }}</th>
+                    <th>{{ obj.brand }}</th>
+                    <th>{{ obj.sizes }}</th>
+
+                </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
