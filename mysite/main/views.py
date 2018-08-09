@@ -24,7 +24,7 @@ index_view = Index.as_view()
 class ItemsList(ListView):
     template_name = 'main/items_list.html'
     context_object_name = 'items-list'
-    paginate_by = 10
+    #paginate_by = 10
 
     def get_queryset(self):
         db = connection[settings.MONGO_DB_NAME]
