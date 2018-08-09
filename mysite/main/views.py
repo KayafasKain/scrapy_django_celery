@@ -29,6 +29,6 @@ class ItemsList(ListView):
     def get_queryset(self):
         db = connection[settings.MONGO_DB_NAME]
         db.authenticate(settings.MONGO_USER_NAME, settings.MONGO_USER_PASSWORD)
-        return db.scrapped_goods.find({})
+        return db.scrapped_goods.find({}).sort([('_id', pymongo.DESCENDING)])
 
 items_list = ItemsList.as_view()
